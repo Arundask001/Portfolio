@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arun Das K | interactive_threat_map</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Space Mono for hacking aesthetic, Inter for reading -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- === FRONT PAGE (LANDING VIEW) === -->
+    <section id="landing-view" class="view-section active-section">
+        <div class="landing-container">
+            <img src="myphoto.jpg" alt="Arun Das K" class="profile-pic-large">
+            <h1 class="hacker-title">ARUN DAS K</h1>
+            <p class="landing-subtitle">Aspiring Cyber Security Engineer</p>
+            
+            <div class="landing-bio-box">
+                <p>I am an aspiring Cybersecurity Engineer and B.Tech Computer Science student at LPU, originally from Kerala. My technical journey is driven by a passion for uncovering vulnerabilities and securing systems, a skill set I actively sharpen by tackling complex TryHackMe challenges. Beyond the terminal, I am an avid reader who believes in continuous learning. Whether I am navigating dynamic security environments or collaborating on complex development projects, I bring strong adaptability, precise time management, and a team-first mindset to every problem I solve.</p>
+            </div>
+
+            <button id="enter-map-btn" class="cyber-btn">> ACCESS THREAT MAP LOGIC <</button>
+        </div>
+    </section>
+
+    <!-- === INTERACTIVE THREAT MAP VIEW === -->
+    <section id="map-view" class="view-section hidden-section">
+        <!-- Background Topology Canvas -->
+        <canvas id="networkCanvas"></canvas>
+
+    <!-- UI Overlay container -->
+    <div id="ui-container">
+        
+        <div class="top-bar">
+            <span>[ SYSTEM ]: Securing Perimeter</span>
+            <span class="pulse-text">Monitoring live threats...</span>
+        </div>
+
+        <!-- The Interactive Nodes -->
+        <div id="nodes-container">
+            <!-- Node 1: Recon (About) -->
+            <div class="node" id="node-recon" style="top: 25%; left: 20%;">
+                <div class="node-icon">[ R ]</div>
+                <div class="node-label" data-original="RECON">RECON</div>
+                <div class="node-desc">Personal Philosophy & Identity</div>
+            </div>
+
+            <!-- Node 2: Arsenal (Skills & Achievements) -->
+            <div class="node" id="node-arsenal" style="top: 60%; left: 15%;">
+                <div class="node-icon">[ A ]</div>
+                <div class="node-label" data-original="ARSENAL">ARSENAL</div>
+                <div class="node-desc">Core Skills & Achievements</div>
+            </div>
+
+            <!-- Node 3: Payloads (Projects) -->
+            <div class="node" id="node-payloads" style="top: 15%; right: 25%;">
+                <div class="node-icon">[ P ]</div>
+                <div class="node-label" data-original="PAYLOADS">PAYLOADS</div>
+                <div class="node-desc">Technical Projects Developed</div>
+            </div>
+
+            <!-- Node 4: Protocols (Certifications) -->
+            <div class="node" id="node-protocols" style="top: 50%; right: 15%;">
+                <div class="node-icon">[ C ]</div>
+                <div class="node-label" data-original="PROTOCOLS">PROTOCOLS</div>
+                <div class="node-desc">Training & Certifications</div>
+            </div>
+
+            <!-- Node 5: Handshake (Education/Contact) -->
+            <div class="node" id="node-handshake" style="bottom: 12%; left: 50%;">
+                <div class="node-icon">[ H ]</div>
+                <div class="node-label" data-original="HANDSHAKE">HANDSHAKE</div>
+                <div class="node-desc">Education & Contact Initiation</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- The Content Modal (Hidden until a node is clicked) -->
+    <div id="content-modal" class="hidden">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span id="modal-title">DECRYPTING...</span>
+                <button id="close-modal" class="btn-close">[ X ] Close</button>
+            </div>
+            <div class="modal-body" id="modal-content">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
